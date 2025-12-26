@@ -130,3 +130,10 @@ document.getElementById("checkout-btn").addEventListener('click', function(){
  cartModal.classList.remove("hidden");
 
 });
+
+
+// modal hide 
+
+document.getElementById("continue-shopping").addEventListener("click", function(){
+    document.getElementById("cart-modal").classList.add("hidden")
+})
