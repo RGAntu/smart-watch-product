@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+    <div class="flex justify-center items-center p-10 gap-5">
+      <div>
+        <img  id="product-image" class="h-full md:h-auto object-cover rounded-lg" src="./images/purple.png" alt="Smartwatch" />
+      </div>
+      <div class="product-content">
+        <div class="product-details">
+          <h2 class="title text-3xl font-bold mb-3">
+            Classy Modern Smart Watch
+          </h2>
+          <div class="product-review flex my-3">
+            <div class="icons">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="review-numbers">
+              <p>(2 Reviews )</p>
+            </div>
+          </div>
+          <div id="product-price-container" class="my-5">
+            <p class="text-purple-500 font-bold text-4xl">
+              $ <span id="product-price"> 79</span>
+            </p>
+          </div>
+          <div class="product-description mb-5">
+            <p>
+              I must explain to you how all this mistaken idea of <br />
+              denouncing pleasure and praising pain was born and I will <br />
+              give you a complete account of the system, and expound <br />
+              the actual teaching.
+            </p>
+          </div>
+          <div class="type-and-model my-5">
+            <p><span class="font-semibold mr-5">Type:</span> watch</p>
+            <p>
+              <span class="font-semibold mr-2">Model:</span> Forerunner 290XT
+            </p>
+          </div>
+
+          <div class="brand my-5">
+            <h3 class="font-semibold mb-2">Brand Color</h3>
+            <div class="brand-color-container flex gap-3">
+              <button class="bg-purple-500 w-5 h-5 rounded-full"></button>
+              <button class="bg-teal-500 w-5 h-5 rounded-full"></button>
+              <button class="bg-cyan-500 w-5 h-5 rounded-full"></button>
+              <button class="bg-gray-600 w-5 h-5 rounded-full"></button>
+            </div>
+          </div>
+
+          <div class="wrist-size">
+            <h3 class="font-semibold mb-2">Brand Size</h3>
+            <div class="wrist-size-container flex gap-2">
+              <button class="btn">S $69</button>
+              <button class="btn">M $79</button>
+              <button class="btn">L $89</button>
+              <button class="btn">XL $99</button>
+            </div>
+          </div>
+
+          <div class="flex gap-5">
+            <!-- quantity start -->
+            <div class="border w-[100px] flex justify-around p-2 my-5">
+              <button>-</button>
+              <button>0</button>
+              <button>+</button>
+            </div>
+
+            <!-- quantity end -->
+
+            <!-- add to cart start -->
+            <div class="cart my-5 flex items-center">
+              <button class="btn bg-purple-500 text-white p-5">
+                Add to Cart
+              </button>
+              <i class="fa-solid fa-heart text-purple-500 text-2xl"></i>
+            </div>
+            <!-- add to cart end -->
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
