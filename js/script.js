@@ -1,5 +1,6 @@
 // select color
 const ringButtons = document.querySelectorAll(".ring-button");
+const productImageBase = "../images/";
 
 
 for(let i = 0; i < ringButtons.length; i++){
@@ -17,7 +18,7 @@ for(let i = 0; i < ringButtons.length; i++){
         event.target.classList.remove("border-gray-600");
 
         const productImage = document.getElementById("product-image");
-        productImage.src = "../images/" + color + ".png";
+        productImage.src = productImageBase + color + ".png";
     });
 
 
@@ -83,6 +84,7 @@ document.getElementById("add-to-cart").addEventListener("click", function(){
             title: "Classy Modern Smart Watch",
             color: selectedColor,
             size: selectedSize,
+            quantity: quantity,
             price: quantity * parseInt(selectedPrice),
         })
         console.log(cartItems)
@@ -92,4 +94,39 @@ document.getElementById("add-to-cart").addEventListener("click", function(){
     else{
         alert("Please select a quantity...")
     }
-})
+});
+
+
+// modal 
+
+document.getElementById("checkout-btn").addEventListener('click', function(){
+    const cartModal = document.getElementById("cart-modal");
+
+
+    const cartContainer = document.getElementById("cart-items");
+
+    for(let i = 0; i < cartItems.length; i++){
+        const item = cartItems[i];
+        const row = document.createElement("tr");
+        row.classList.add("border-b");
+
+        row.innerHTML= `
+        <td>
+        <div class=" flex items-center py-3 space-x-2">
+        <img class="w-12 h-12 object-cover rounded-md" src="${productImageBase}${item.image}" />
+        <span class="font-semibold">${item.title}</span>
+        </div>
+        </td>
+        <td class="py-2 px-4">${item.color}</td>
+        <td class="py-2 px-4">${item.size}</td>
+        <td class="py-2 px-4">${item.quantity}</td>
+        <td class="py-2 px-4">$${item.price}</td>
+        `
+        cartContainer.appendChild(row)
+    }
+
+
+
+ cartModal.classList.remove("hidden");
+
+});
