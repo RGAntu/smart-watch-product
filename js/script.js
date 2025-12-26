@@ -1,3 +1,4 @@
+// select color
 const ringButtons = document.querySelectorAll(".ring-button");
 
 
@@ -25,7 +26,7 @@ for(let i = 0; i < ringButtons.length; i++){
 
 }
 
-
+// size
 function selectWristSize(size){
     const sizes = ["S", "M", "L", "XL"];
     for(let i = 0; i < sizes.length; i++){
@@ -41,7 +42,7 @@ function selectWristSize(size){
     }
 }
 
-
+// quantity
 const quantityElements = document.querySelectorAll(".quantity-button");
 for(let btn of quantityElements){
     btn.addEventListener("click", function(event){
@@ -54,3 +55,18 @@ for(let btn of quantityElements){
         
     })
 }
+
+// add to cart
+let cartCount = 0;
+document.getElementById("add-to-cart").addEventListener("click", function(){
+    const quantity = parseInt(document.getElementById("quantity").innerText);
+
+    if(quantity > 0){
+        document.getElementById("checkout-container").classList.remove("hidden")
+        cartCount = cartCount + quantity;
+        document.getElementById("cart-count").innerText = cartCount;
+    }
+    else{
+        alert("Please select a quantity...")
+    }
+})
